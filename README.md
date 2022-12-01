@@ -19,6 +19,7 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - [X] Setup hosting of info page
 - [ ] Find a library for Python
 - [ ] Setup mail checker and test
+- [ ] Build out applications
 - [ ] Publish and market
 
 # General commands
