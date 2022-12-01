@@ -11,15 +11,15 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - Stretch: APRS gateway / APRS-IS API interface
 
 # Todo
-[X] Build command list
-[X] Install Proxmox on NAS
-[X] Build VM running Linux
-[X] Identify a domain
-[X] Setup hosting of mailbox
-[  ] Setup hosting of info page
-[  ] Find a library for Python
-[  ] Setup mail checker and test
-[  ] Publish and market
+- [X] Build command list
+- [X] Install Proxmox on NAS
+- [X] Build VM running Linux
+- [X] Identify a domain
+- [X] Setup hosting of mailbox
+- [ ] Setup hosting of info page
+- [ ] Find a library for Python
+- [ ] Setup mail checker and test
+- [ ] Publish and market
 
 # General commands
 * Catalog / index - Lists all available applications and their commands
