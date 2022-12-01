@@ -16,7 +16,7 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - [X] Build VM running Linux
 - [X] Identify a domain
 - [X] Setup hosting of mailbox
-- [ ] Setup hosting of info page
+- [X] Setup hosting of info page
 - [ ] Find a library for Python
 - [ ] Setup mail checker and test
 - [ ] Publish and market
