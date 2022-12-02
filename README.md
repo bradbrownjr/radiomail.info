@@ -23,15 +23,14 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - [ ] Publish and market
 
 # General commands
-* Catalog / index - Lists all available applications and their commands
-	* Apps* - Lists just the apps (shorter transmission)
-	* All / Full - Apps and Commands
-* Help - Information about a command and examples
-	* Help {app} - Get info on specific applications
-* About / Info - Information about this service
-* Test - Provides brief response to confirm receipt, to include time of receive and time of execution
-* {application} {app-command} - Execute an application and its available commands
-
+- Catalog / index - Lists all available applications and their commands
+- Apps* - Lists just the apps (shorter transmission)
+- All / Full - Apps and Commands
+- Help - Information about a command and examples
+- Help {app} - Get info on specific applications
+- About / Info - Information about this service
+- Test - Provides brief response to confirm receipt, to include time of receive and time of execution
+- {application} {app-command} - Execute an application and its available commands
 
 # Applications
 
@@ -40,15 +39,15 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - Path {mygrid} {callsign} - Get direction and distance between your location and the remote operator
 
 ## WX
-* Forecast {Today*, Tomorrow, 10-day} {zipcode, gridsquare, nearest city}
-* Almanac {sunrise, sunset, moonrise, moonset, planets in view, all*}
+- Forecast {Today*, Tomorrow, 10-day} {zipcode, gridsquare, nearest city}
+- Almanac {sunrise, sunset, moonrise, moonset, planets in view, all*}
 
 ## Satellite
-* Keplers - Fresh satellite keplers table (large file)
-* Passes - Next hour of all celestial passes
+- Keplers - Fresh satellite keplers table (large file)
+- Passes - Next hour of all celestial passes
 
 ## DX Cluster
-* Last # (def 10)
+- Last # (def 10)
 
 ## Bandplan
 Format e.g.:  ``10m basic US General
@@ -66,8 +65,8 @@ Format e.g.:  ``10m basic US General
 - latlong {gridsquare}
 
 ## Nets
-* On {band}
-* Upcoming {band} - Next hour
+- On {band}
+- Upcoming {band} - Next hour
 
 ## Repeaters
 - Near {gridsquare} {band} {# of (10*)} - Pulls nearest repeaters
@@ -84,8 +83,8 @@ Format e.g.:  ``10m basic US General
 
 ## Book
 Pulls chapters from public domain literature
-* List {genre, author}
-* Read {book's title} {Chapter (1*)}
+- List {genre, author}
+- Read {book's title} {Chapter (1*)}
 
 ## News
 Top ten news stories of the day
