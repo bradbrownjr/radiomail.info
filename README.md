@@ -29,7 +29,9 @@ General ham radio reference platform for Winlink and packet radio email gateways
 * Help - Information about a command and examples
 	* Help {app} - Get info on specific applications
 * About / Info - Information about this service
-* Get {application} {app-command} - Execute an application and its available commands
+* Test - Provides brief response to confirm receipt, to include time of receive and time of execution
+* {application} {app-command} - Execute an application and its available commands
+
 
 # Applications
 
