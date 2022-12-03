@@ -17,9 +17,9 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - [X] Identify a domain
 - [X] Setup hosting of mailbox
 - [X] Setup hosting of info page
-- [ ] Find an imap library for Python
-- [ ] Setup mail checker and test
-- [ ] Build out applications
+- [X] Find an imap library for Python
+- [X] Setup mail checker and test
+- [ ] Build out applications - Working on TEST
 - [ ] Publish and market
 
 # General commands
