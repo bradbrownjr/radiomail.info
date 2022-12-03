@@ -88,3 +88,13 @@ Pulls chapters from public domain literature
 
 ## News
 Top ten news stories of the day
+
+# Installation
+This project is still in the early proof-of-concept stage, and no guarantee is made of its functionality.
+Config file ``config.pu`` should be created within the folder with the executables (bin/)
+
+```python
+imap_servername = ""
+imap_username = ""
+imap_password = ""
+```
