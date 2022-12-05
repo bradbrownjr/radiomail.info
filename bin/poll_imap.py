@@ -15,6 +15,26 @@ except ImportError:
   os.system('python3 -m pip install imap_tools')
 from imap_tools import MailBox, AND
 
+# About
+def about(request):
+    result = """Get Radio Info
+--------------
+Retrieve information from the Internet
+from locations off grid via radio-based
+email, using Winlink, APRS, or packet
+radio!
+
+Commands are sent in the subject, and
+the request in the body of a message.
+
+Enter the following commands for help:
+* Catalog - List of commands
+* Help {command} - Get help on a
+  specific command
+"""
+    return result
+info = about
+
 # Test App
 def test(request):
     result = "Test message was received.\r\n\r\nYour request:\r\n" + request
