@@ -3,12 +3,13 @@ General ham radio reference platform for Winlink and packet radio email gateways
 
 # Requirements
 - Remote operator emails the application's address with a command, application, and values in the subject; body is not required and encouraged to be left blank or as small as possible
-- Applicaiton will poll for new email w/ SMTP every X minutes, ~~or watch the mailer spool's folder for new content~~
+- Applicaiton will poll for new email w/ SMTP every X minutes
 - For each *new* email run the appropriate function to respond to the command contained within the subject, and mark the email read or delete it (probably cleanest to delete them upon use)
 - If an application command's value isn't entered and there is no default, an error response should be provided, and the email marked for deletion
-- For each, log the time, sender, subject, and body of request to /var/log/radiomailinfo.log
-- Stretch: A telnet, AXIP, or API interface for packet radio
+- Applications will be individual modules, to be included in the respective processor / poller script, to facilitate reuse across pollers; each module will contain variables to populate the ``help {command}`` requests
+- For each, log the time, sender, subject, and body of request to /var/log/radiomailinfo.log (this can be accomplished at cron.d by funneling stdout to /var/log/radiomail.log)
 - Stretch: APRS gateway / APRS-IS API interface
+- Stretch: A telnet, AXIP, or API interface for packet radio
 
 # Todo
 - [X] Build command list
@@ -19,14 +20,11 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - [X] Setup hosting of info page
 - [X] Find an imap library for Python
 - [X] Setup mail checker and test
-- [ ] Build out applications - Working on TEST
+- [ ] Build out applications - Working on 
 - [ ] Publish and market
 
 # General commands
 - Catalog / index - Lists all available applications and their commands
-- Apps* - Lists just the apps (shorter transmission)
-- All / Full - Apps and Commands
-- Help - Information about a command and examples
 - Help {app} - Get info on specific applications
 - About / Info - Information about this service
 - Test - Provides brief response to confirm receipt, to include time of receive and time of execution
