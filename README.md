@@ -91,7 +91,7 @@ Top ten news stories of the day
 
 # Installation
 This project is still in the early proof-of-concept stage, and no guarantee is made of its functionality.
-Config file ``config.pu`` should be created within the folder with the executables (bin/)
+Config file ``config.py`` should be created within the folder with the executables (bin/)
 
 ```python
 imap_servername = ""

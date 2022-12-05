@@ -4,26 +4,60 @@
 # Uses imap-tools from https://github.com/ikvk/imap_tools
 import os
 import config as cfg
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 try:
   import imap_tools
 except ImportError:
   print ("Trying to Install required module: imap_tools\n")
   os.system('python3 -m pip install imap_tools')
-from imap_tools import MailBox, AND, A
+from imap_tools import MailBox, AND
 
 # Test App
-def test():
-    result = "Test message was received.\n" + msg.text
+def test(request):
+    result = "Test message was received.\r\n\r\nYour request:\r\n" + request
     return result
 
 # Send reply
-def respond(response):
-    print(response)  # Validating receipt of response for testing
+def respond(result):
+    reply = MIMEMultipart()
+    reply['From'] = cfg.imap_username
+    reply['To'] = msg.from_
+    reply['Subject'] = 're: '+msg.subject
+    reply.attach(MIMEText(result, 'plain'))
+    server = smtplib.SMTP(cfg.imap_servername)
+    server.login(cfg.imap_username, cfg.imap_password)
+    server.sendmail(cfg.imap_username,msg.from_,reply.as_string())
     return
 
 # Poll messages
-with MailBox(cfg.imap_servername).login(cfg.imap_username, cfg.imap_password) as mailbox:
-    for msg in mailbox.fetch(): #.fetch(AND(seen=False)):
-        print("Payload", msg.date, msg.subject, len(msg.text or msg.html))
-        respond(eval(msg.subject+'()'))
+def main():
+    # Define global variables used in other functions
+    global msg
+
+    # Log into mailbox
+    with MailBox(cfg.imap_servername).login(cfg.imap_username, cfg.imap_password) as mailbox:
+    
+        # Fetch mail
+        for msg in mailbox.fetch(AND(seen=False)):
+    
+            # Log the inquiry (to screen atm)
+            print(msg.date, msg.from_, msg.subject, len(msg.text or msg.html))
+    
+            # Run function based on subject name, and then reply
+            # e.g.: respond(test(msg.text))
+            try:
+                respond(eval(msg.subject.lower()+'(msg.text)'))
+            except:
+                print("Not in scope: " + msg.subject.lower())
+                respond("Request not in scope, sorry!")
+            else:
+                print("In scope: " + msg.subject.lower())
+                respond(eval(msg.subject.lower()+'(msg.text)'))
+    return
+
+# Main
+if __name__ == '__main__':
+    main()
