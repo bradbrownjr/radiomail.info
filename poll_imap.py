@@ -15,8 +15,10 @@ except ImportError:
   os.system('python3 -m pip install imap_tools')
 from imap_tools import MailBox, AND
 
-# Import modules
+# Initialize variables
+app_info = ""  # To be appended by each app module
 
+# Import modules
 
 # About
 def about(request):
@@ -37,6 +39,12 @@ Enter the following commands for help:
 """
     return result
 info = about
+
+# Catalog
+def catalog(request):
+    result = "Get Radio Info Catalog\r\n----------------------" + app_info
+    return result
+help = catalog
 
 # Test App
 def test(request):
@@ -73,12 +81,12 @@ def main():
             # e.g.: respond(test(msg.text))
             try:
                 respond(eval(msg.subject.lower()+'(msg.text)'))
+                print("In scope: " + msg.subject.lower())
             except:
                 print("Not in scope: " + msg.subject.lower())
                 respond("Request not in scope, sorry!")
-            else:
-                print("In scope: " + msg.subject.lower())
-                respond(eval(msg.subject.lower()+'(msg.text)'))
+            #else:
+            #    respond(eval(msg.subject.lower()+'(msg.text)'))
     return
 
 # Main
