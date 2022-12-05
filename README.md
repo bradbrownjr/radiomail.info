@@ -6,7 +6,9 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - Applicaiton will poll for new email w/ SMTP every X minutes
 - For each *new* email run the appropriate function to respond to the command contained within the subject, and mark the email read or delete it (probably cleanest to delete them upon use)
 - If an application command's value isn't entered and there is no default, an error response should be provided, and the email marked for deletion
-- Applications will be individual modules, to be included in the respective processor / poller script, to facilitate reuse across pollers; each module will contain variables to populate the ``help {command}`` requests
+- Applications will be individual modules
+	- facilitates reuse across pollers
+	- each module will contain variables to populate the ``help {command}`` requests and ``Catalog`` list
 - For each, log the time, sender, subject, and body of request to /var/log/radiomailinfo.log (this can be accomplished at cron.d by funneling stdout to /var/log/radiomail.log)
 - Stretch: APRS gateway / APRS-IS API interface
 - Stretch: A telnet, AXIP, or API interface for packet radio
@@ -20,7 +22,8 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - [X] Setup hosting of info page
 - [X] Find an imap library for Python
 - [X] Setup mail checker and test
-- [ ] Build out applications - Working on 
+- [ ] Build out general commands
+- [ ] Build out applications
 - [ ] Publish and market
 
 # General commands
