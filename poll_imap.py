@@ -16,7 +16,7 @@ except ImportError:
 from imap_tools import MailBox, AND
 
 # Initialize variables
-app_info = ""  # To be appended by each app module
+app_info = ""  # To be appended by each app module, must be something if no modules are loaded
 
 # Import modules
 
@@ -42,7 +42,10 @@ info = about
 
 # Catalog
 def catalog(request):
-    result = "Get Radio Info Catalog\r\n----------------------" + app_info
+    ## Todo: Pull only first line of 'request' in case of signature
+    ##       Grep app_info for info specific to the 'request'ed command, for help
+    ##       If request is blank, it should skip grep and list the whole catalog
+    result = "Get Radio Info Command Reference\r\n--------------------------------\r\n" + app_info
     return result
 help = catalog
 
