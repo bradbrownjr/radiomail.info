@@ -1,27 +1,33 @@
 #!/usr/bin/env python3
-
+"""
+Application authored by Bradley Brown Jr, KC1JMH
+Provides informational responses from Internet
+resources to radio-based e-mail inquiries
+originating in areas without Internet access.
+"""
 # Import required libraries
 # Uses imap-tools from https://github.com/ikvk/imap_tools
 import os
-import config as cfg
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
 try:
-  import imap_tools
+    import imap_tools
 except ImportError:
-  print ("Trying to Install required module: imap_tools\n")
-  os.system('python3 -m pip install imap_tools')
+    print ("Trying to Install required module: imap_tools\n")
+    os.system('python3 -m pip install imap_tools')
 from imap_tools import MailBox, AND
 
 # Initialize variables
+# pylint: disable=C0103
+import config as cfg
 app_info = ""  # To be appended by each app module, must be something if no modules are loaded
 
 # Import modules
 
 # About
-def about(request):
+def about():
+    """Get info about this service"""
     result = """Get Radio Info
 --------------
 Retrieve information from the Internet
@@ -42,20 +48,23 @@ info = about
 
 # Catalog
 def catalog(request):
-    ## Todo: Pull only first line of 'request' in case of signature
-    ##       Grep app_info for info specific to the 'request'ed command, for help
-    ##       If request is blank, it should skip grep and list the whole catalog
-    result = "Get Radio Info Command Reference\r\n--------------------------------\r\n" + app_info
+    """Provides entire catalog or requested application syntax"""
+    if request:
+        result = request # Todo: Grep app_info for info specific to the 'request'ed command for help
+    else:
+        result = "Get Radio Info Command Reference\r\n------------------------------\r\n" + app_info
     return result
 help = catalog
 
 # Test App
 def test(request):
+    """Allows op to test functionality without calling for a report"""
     result = "Test message was received.\r\n\r\nYour request:\r\n" + request
     return result
 
 # Send reply
 def respond(result):
+    """Email the results back to the op"""
     reply = MIMEMultipart()
     reply['From'] = cfg.imap_username
     reply['To'] = msg.from_
@@ -64,22 +73,22 @@ def respond(result):
     server = smtplib.SMTP(cfg.imap_servername)
     server.login(cfg.imap_username, cfg.imap_password)
     server.sendmail(cfg.imap_username,msg.from_,reply.as_string())
-    return
 
 # Poll messages
 def main():
+    """Poll for email on imap host and call upon the module that'll provide a response"""
     # Define global variables used in other functions
     global msg
 
     # Log into mailbox
     with MailBox(cfg.imap_servername).login(cfg.imap_username, cfg.imap_password) as mailbox:
-    
+
         # Fetch mail
         for msg in mailbox.fetch(AND(seen=False)):
-    
+
             # Log the inquiry (to screen atm)
             print(msg.date, msg.from_, msg.subject, len(msg.text or msg.html))
-    
+
             # Run function based on subject name, and then reply
             # e.g.: respond(test(msg.text))
             try:
