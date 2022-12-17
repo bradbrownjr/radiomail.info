@@ -20,8 +20,9 @@ from imap_tools import MailBox, AND
 
 # Initialize variables
 # pylint: disable=C0103
+app_info = "Applications: \n"  # To be appended by each app module, must be something if no modules are loaded
 import config as cfg
-app_info = ""  # To be appended by each app module, must be something if no modules are loaded
+import weather
 
 # Import modules
 

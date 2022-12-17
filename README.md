@@ -39,7 +39,7 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - QRZ {callsign} - Lookup name, address, QSL info
 - Path {mygrid} {callsign} - Get direction and distance between your location and the remote operator
 
-## WX
+## Weather
 - Forecast {Today*, Tomorrow, 10-day} {zipcode, gridsquare, nearest city}
 - Almanac {sunrise, sunset, moonrise, moonset, planets in view, all*}
 
