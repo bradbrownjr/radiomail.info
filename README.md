@@ -40,6 +40,7 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - Path {mygrid} {callsign} - Get direction and distance between your location and the remote operator
 
 ## Weather
+- Alerts {state:ME} {County} - Lists all alerts if county ommitted
 - Forecast {Today*, Tomorrow, 10-day} {zipcode, gridsquare, nearest city}
 - Almanac {sunrise, sunset, moonrise, moonset, planets in view, all*}
 
