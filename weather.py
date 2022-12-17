@@ -4,7 +4,13 @@
 # Import required libraries
 
 # Declare variables
+"""
+Alerts
+https://api.weather.gov/alerts/active?area=ME (State must be caps)
+Search areaDesc for County
 
+Need a lookup of county or lat/long by gridsquare
+"""
 
 # Functions
 def weather(request):
