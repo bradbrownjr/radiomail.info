@@ -82,13 +82,17 @@ Format e.g.:  ``10m basic US General
 - Category {TBD}
 - Source {ARRL, WX, List}
 
-## Book
-Pulls chapters from public domain literature
-- List {genre, author}
-- Read {book's title} {Chapter (1*)}
+## Carrier Lookup
+Identify the carrier and email gateways for a phone number, useful for sending SMS over Winlink.
 
 ## News
 Top ten news stories of the day
+
+## Book
+Entertainment is a stretch goal
+Pulls chapters from public domain literature
+- List {genre, author}
+- Read {book's title} {Chapter (1*)}
 
 # Installation
 This project is still in the early proof-of-concept stage, and no guarantee is made of its functionality.
