@@ -47,8 +47,8 @@ General ham radio reference platform for Winlink and packet radio email gateways
 - Keplers - Fresh satellite keplers table (large file)
 - Passes - Next hour of all celestial passes
 
-## DX Cluster
-- Last # (def 10)
+## Spots
+- [program] [#] (e.g.: POTA 10, SOTA 10, BOTA 10)
 
 ## Bandplan
 Format e.g.:  ``10m basic US General
