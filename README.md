@@ -1,5 +1,5 @@
 # About
-General ham radio reference platform for Winlink and packet radio email gateways. This pulls information from online sources to provide to operators who are without Internet access.
+General ham radio reference platform for Winlink and packet radio email gateways. This pulls information from online sources to provide to operators who are without Internet access. *Very much a concept at this time.*
 
 # Requirements
 - Remote operator emails the application's address with a command, application, and values in the subject; body is not required and encouraged to be left blank or as small as possible
